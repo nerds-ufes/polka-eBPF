@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # TOPOLOGIA COM 2 SWITCHES CORE, 1 EDGE(POLKA) E 2 HOSTS
-# H1 (Polka-eBPF) ---- S1 ---- S2 ---- E2 ---- H2
+# H1 (Polka-eBPF) ---- S1 ---- S2 ---- (Polka-eBPF) H2
 import os
 import sys
 
