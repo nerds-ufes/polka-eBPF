@@ -10,4 +10,7 @@ sudo python3 topo_2h-eBPF.py
 mininet> h1 ping h2
 mininet> h2 ping h1
 ```
+### 2. POLKA implementation on the host using eBPF:
+**encap_map-h_ _x_ _.c** and **decap.c** codes, respectively using tc anchored in the egress, and xdp.
 
+To compile encap using maps (encap_maps.c), a targeted compilation is required, which becomes:
