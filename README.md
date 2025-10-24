@@ -1,5 +1,5 @@
 # polka-eBPF
-!(/)
+!(/figures/Polka-eBPF.jpg)
 ## Building environment for eBPF:
 ### 1. Required compilation libraries:
 ```
