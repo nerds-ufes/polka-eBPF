@@ -52,3 +52,21 @@ sudo bpftool prog list | grep -i classifier
 ```
 sudo bpftool prog show name tc_rtt_monitor
 ```
+
+### 4. Loading program into interface::
+```
+sudo ip link set dev <interface> xdp obj <arquivo.o> sec xdp
+```
+**Exemple:**
+```
+sudo ip link set dev enp0s3 xdp obj xdp_ip_filter.o sec xdp
+```
+
+### 5. Deleting program from interface:
+```
+sudo ip link set dev <interface> xdp off
+```
+**Exemple:**
+```
+sudo ip link set dev enp0s3 xdp off
+```
