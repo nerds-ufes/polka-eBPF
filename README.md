@@ -78,3 +78,34 @@ When adding eBPF programs to the Mininet host interface, for example, **h1-eth0*
 
 The message indicates that the BPF filesystem (bpffs) is not mounted within the h1 host namespace. This means that the **'ip link set dev ... xdp obj ...'** command needs to access the BPF filesystem (**/sys/fs/bpf**) to map programs, maps, etc., but within the network namespace (such as Mininet hosts), this directory may not be automatically mounted.
 
+### 1. How to solve: Mount bpffs globally (on the real host):
+On the main host (outside Mininet), run:
+```
+sudo mount bpffs /sys/fs/bpf -t bpf
+```
+On Mininet host:
+```
+h1 mkdir -p /sys/fs/bpf
+h1 mount -t bpf bpf /sys/fs/bpf
+```
+On the main host (outside Mininet), run:
+```
+sudo mount bpffs /sys/fs/bpf -t bpf
+```
+**Example**
+```
+(on mininet)> h1 ip link show
+(on mininet)> h1 ip link set dev h1-eth0 xdp obj xdp_ip_filter.o sec xdp
+(Deleting the program from the interface)
+(on mininet)> h1 ip link set dev h1-eth0 xdp off
+```
+```
+*** Starting CLI:
+mininet> h1 mkdir -p /sys/fs/bpf
+mininet> h1 mount -t bpf bpf /sys/fs/bpf
+mininet> h1 tc qdisc add dev h1-eth0 clsact
+mininet> h1 tc filter add dev h1-eth0 egress bpf obj encap.o sec tc
+mininet> h1 tc filter add dev h1-eth0 ingress bpf obj decap.o sec tc
+mininet> h1 ping h2
+```
+
