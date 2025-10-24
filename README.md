@@ -11,7 +11,7 @@ sudo apt install -y clang llvm libbpf-dev libbpfcc-dev gcc make pkg-config \
 ```
 sudo clang -O2 -g -target bpf -c <arquivo.c> -o <arquivo.o>
 ```
-**Exemple:**
+**Example:**
 ```
 sudo clang -O2 -g -target bpf -c custom_header.c -o custom_header.o
 sudo clang -O2 -target bpf -c xdp_ip_filter_source.c -o xdp_ip_filter_source.o
@@ -35,7 +35,7 @@ sudo tc filter add dev eth0 egress bpf obj custom_header.o sec classifier
 ```
 ip link show dev <nome-interface>
 ```
-**Exemple:**
+**Example:**
 ```
 ip link show dev enp0s3
 ```
@@ -57,7 +57,7 @@ sudo bpftool prog show name tc_rtt_monitor
 ```
 sudo ip link set dev <interface> xdp obj <arquivo.o> sec xdp
 ```
-**Exemple:**
+**Example:**
 ```
 sudo ip link set dev enp0s3 xdp obj xdp_ip_filter.o sec xdp
 ```
@@ -66,7 +66,7 @@ sudo ip link set dev enp0s3 xdp obj xdp_ip_filter.o sec xdp
 ```
 sudo ip link set dev <interface> xdp off
 ```
-**Exemple:**
+**Example:**
 ```
 sudo ip link set dev enp0s3 xdp off
 ```
