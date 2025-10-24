@@ -74,7 +74,7 @@ sudo ip link set dev enp0s3 xdp off
 
 ## Loading eBPF program into mininet:
 
-When adding eBPF programs to the Mininet host interface, for example, h1-eth0, you must create a mount point for eBPF (bpffs mountpoint). Otherwise, you will receive the error message "mkdir /sys/fs/bpf/tc/ failed: No such file or directory. Continuing without mounted eBPF fs. Too old kernel? mkdir (null)/globals failed: No such file or directory."
+When adding eBPF programs to the Mininet host interface, for example, **h1-eth0**, you must create a mount point for eBPF (**bpffs mountpoint**). Otherwise, you will receive the error message _ _"mkdir /sys/fs/bpf/tc/ failed: No such file or directory. Continuing without mounted eBPF fs. Too old kernel? mkdir (null)/globals failed: No such file or directory." _ _
 
-The message indicates that the BPF filesystem (bpffs) is not mounted within the h1 host namespace. This means that the 'ip link set dev ... xdp obj ...' command needs to access the BPF filesystem (/sys/fs/bpf) to map programs, maps, etc., but within the network namespace (such as Mininet hosts), this directory may not be automatically mounted.
+The message indicates that the BPF filesystem (bpffs) is not mounted within the h1 host namespace. This means that the **'ip link set dev ... xdp obj ...'** command needs to access the BPF filesystem (**/sys/fs/bpf**) to map programs, maps, etc., but within the network namespace (such as Mininet hosts), this directory may not be automatically mounted.
 
