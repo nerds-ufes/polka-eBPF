@@ -120,7 +120,7 @@ mininet> h1 ping h2
 ```
 
 ## OBS:
-In the script topo_2h-eBPF.py BMv2 + P4 is used, so it is necessary to add the bmv2.py library to the "/mininet/mininet/" directory 
+1. In the script topo_2h-eBPF.py BMv2 + P4 is used, so it is necessary to add the bmv2.py library to the "/mininet/mininet/" directory 
 ```
 sudo cp bmv2.py /mininet/mininet/
 ```
@@ -128,3 +128,4 @@ and reinstall mininet:
 ```
 ./mininet/util/install.sh -nv
 ```
+2. Another alternative is to use mininet-wifi: (https://mininet-wifi.github.io/) ; (https://github.com/intrig-unicamp/mininet-wifi)
