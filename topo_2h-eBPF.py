@@ -89,7 +89,7 @@ def topology(remote_controller):
     for host in hosts:
         host.cmd("ethtool --offload {}-eth0 rx off tx off".format(host.name))
         host.cmd("./conf-{}-map.sh".format(host.name))
-        host.cmd("sh < config/{}-table.txt".format(host.name))
+        host.cmd("sh < conf/{}-table.txt".format(host.name))
 
     info("*** Running CLI\n")
     CLI(net)
