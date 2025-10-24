@@ -38,4 +38,4 @@ h1 bpftool map dump name ip_key_map
 h1 bpftool map delete name ip_key_map_h1 key hex 0A 00 02 02
 ```
 
-__Note: In a Mininet emulation, it is necessary to create, for each host, a separate eBPF object file (e.g., `encap_map_h1.o` for `h1-eth0`, `encap_map_h2.o` for `h2-eth0`). For each object, a distinct map must also be created — for example, `ip_key_map_h1` for `h1-eth0` (`encap_map_h1.o`) and `ip_key_map_h2` for `h2-eth0` (`encap_map_h2.o`). This is required because the namespaces of `h1` and `h2` share the same maps; therefore, by using different names, each host/interface maintains its own independent map table.__
+_ _**Note: In a Mininet emulation, it is necessary to create, for each host, a separate eBPF object file (e.g., `encap_map_h1.o` for `h1-eth0`, `encap_map_h2.o` for `h2-eth0`). For each object, a distinct map must also be created — for example, `ip_key_map_h1` for `h1-eth0` (`encap_map_h1.o`) and `ip_key_map_h2` for `h2-eth0` (`encap_map_h2.o`). This is required because the namespaces of `h1` and `h2` share the same maps; therefore, by using different names, each host/interface maintains its own independent map table.**_ _
