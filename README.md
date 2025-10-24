@@ -7,6 +7,16 @@ sudo apt update
 sudo apt install -y clang llvm libbpf-dev libbpfcc-dev gcc make pkg-config \
                    linux-headers-$(uname -r) bpftool
 ```
+
+```
+sudo apt-get install -y gcc-multilib
+sudo apt install pkg-config
+sudo apt install m4
+sudo apt install libelf-dev
+sudo apt install libpcap-dev
+sudo apt install gcc-multilib
+```
+
 ### 2. How to compile:
 ```
 sudo clang -O2 -g -target bpf -c <arquivo.c> -o <arquivo.o>
