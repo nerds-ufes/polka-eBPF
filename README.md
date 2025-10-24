@@ -10,7 +10,7 @@ sudo apt install -y clang llvm libbpf-dev libbpfcc-dev gcc make pkg-config \
 2. How to compile:
 ```
 sudo clang -O2 -g -target bpf -c <arquivo.c> -o <arquivo.o>
-** Exemplo: **
+**Exemple:**
 sudo clang -O2 -g -target bpf -c custom_header.c -o custom_header.o
 sudo clang -O2 -target bpf -c xdp_ip_filter_source.c -o xdp_ip_filter_source.o
 ```
