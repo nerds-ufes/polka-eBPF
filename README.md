@@ -3,6 +3,6 @@
 ## Building environment for eBPF:
 ### 1. To run, simply:
 ```
-sudo python3 topo_2h.py
+sudo python3 topo_2h-eBPF.py
 ```
 
