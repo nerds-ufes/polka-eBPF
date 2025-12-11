@@ -2,6 +2,12 @@
 ![Setup de testes](figures/Polka-eBPF.jpg)
 ## Building environment for eBPF:
 ### 1. To run, simply:
+
+It is necessary to change the '.sh' shell script files to executable mode.
+```
+cd polka-eBPF/
+$ chmod +x *.sh
+``
 ```
 cd polka-eBPF/
 sudo python3 topo_2h-eBPF.py
